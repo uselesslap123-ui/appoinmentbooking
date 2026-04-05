@@ -5,7 +5,7 @@ export type Doctor = {
   experience: number; // in years
   clinic: string;
   location: string;
-  fees: number; // in USD
+  fees: number; // in INR
   rating: number; // out of 5
   distance: number; // in miles
   avatarUrl: string;
@@ -20,7 +20,7 @@ export const doctors: Doctor[] = [
     experience: 15,
     clinic: "City Heart Clinic",
     location: "Downtown, Metro City",
-    fees: 250,
+    fees: 2000,
     rating: 4.8,
     distance: 2.5,
     avatarUrl: "https://picsum.photos/seed/doc1/200/200",
@@ -33,10 +33,10 @@ export const doctors: Doctor[] = [
     experience: 8,
     clinic: "Skin & Wellness Center",
     location: "Uptown, Metro City",
-    fees: 180,
+    fees: 1500,
     rating: 4.9,
     distance: 5.1,
-    avatarUrl: "https://picsum.photos/seed/doc2/200/200",
+    avatarUrl: "https://picsum.photos/seed/indian-doctor-female/200/200",
     availability: { "Tuesday": ["9:00 AM", "10:00 AM"], "Thursday": ["1:00 PM"] },
   },
   {
@@ -46,7 +46,7 @@ export const doctors: Doctor[] = [
     experience: 12,
     clinic: "Community Health Services",
     location: "Suburbia, Metro City",
-    fees: 120,
+    fees: 1000,
     rating: 4.7,
     distance: 8.3,
     avatarUrl: "https://picsum.photos/seed/doc3/200/200",
@@ -59,7 +59,7 @@ export const doctors: Doctor[] = [
     experience: 10,
     clinic: "KidsCare Pediatrics",
     location: "Westside, Metro City",
-    fees: 150,
+    fees: 1200,
     rating: 4.9,
     distance: 4.0,
     avatarUrl: "https://picsum.photos/seed/doc4/200/200",
@@ -72,7 +72,7 @@ export const doctors: Doctor[] = [
     experience: 20,
     clinic: "Green Family Practice",
     location: "Eastside, Metro City",
-    fees: 135,
+    fees: 1100,
     rating: 4.8,
     distance: 1.2,
     avatarUrl: "https://picsum.photos/seed/doc5/200/200",
@@ -85,7 +85,7 @@ export const doctors: Doctor[] = [
     experience: 5,
     clinic: "The Dermatology Group",
     location: "Financial District, Metro City",
-    fees: 220,
+    fees: 1800,
     rating: 4.6,
     distance: 6.8,
     avatarUrl: "https://picsum.photos/seed/doc6/200/200",

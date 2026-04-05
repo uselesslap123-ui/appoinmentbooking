@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Star, MapPin, Briefcase, DollarSign } from "lucide-react";
+import { Star, MapPin, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -49,8 +49,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
           mi away)
         </div>
         <div className="flex items-center text-muted-foreground">
-          <DollarSign className="w-4 h-4 mr-2" /> ${doctor.fees} consultation
-          fee
+          <span className="font-bold mr-2">₹</span>{doctor.fees} consultation fee
         </div>
       </CardContent>
       <CardFooter>
