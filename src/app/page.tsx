@@ -27,10 +27,10 @@ export default function Home() {
           </Link>
           <nav className="flex items-center space-x-2 sm:space-x-4">
             <Button variant="link" asChild className="text-white hover:underline uppercase">
-              <Link href="/patient/dashboard">Login</Link>
+              <Link href="/patient/dashboard">Patient Login</Link>
             </Button>
             <Button variant="link" asChild className="text-white hover:underline uppercase">
-               <Link href="/doctor/dashboard">Register</Link>
+               <Link href="/doctor/dashboard">Doctor Login</Link>
             </Button>
           </nav>
         </header>
