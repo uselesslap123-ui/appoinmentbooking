@@ -1,11 +1,14 @@
-import Link from "next/link";
+'use client';
+
+import Link from 'next/link';
 import {
   Home,
   User,
   Stethoscope,
   Calendar,
   Settings,
-} from "lucide-react";
+  ClipboardCheck,
+} from 'lucide-react';
 
 import {
   SidebarProvider,
@@ -18,41 +21,46 @@ import {
   SidebarFooter,
   SidebarTrigger,
   SidebarInset,
-} from "@/components/ui/sidebar";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/sidebar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 
 type DashboardLayoutProps = {
   children: React.ReactNode;
-  userType: "patient" | "doctor";
+  userType: 'patient' | 'doctor';
 };
 
 const patientNav = [
-  { name: "Symptom Checker", href: "/patient/dashboard", icon: Home },
-  { name: "Find Doctors", href: "/patient/doctors", icon: Stethoscope },
-  { name: "My Appointments", href: "/patient/appointments", icon: Calendar },
-  { name: "My Profile", href: "/patient/profile", icon: User },
+  { name: 'Symptom Checker', href: '/patient/dashboard', icon: Home },
+  { name: 'Find Doctors', href: '/patient/doctors', icon: Stethoscope },
+  { name: 'My Appointments', href: '/patient/appointments', icon: Calendar },
+  { name: 'My Profile', href: '/patient/profile', icon: User },
 ];
 
 const doctorNav = [
-  { name: "Dashboard", href: "/doctor/dashboard", icon: Home },
-  { name: "My Availability", href: "/doctor/availability", icon: Calendar },
-  { name: "My Profile", href: "/doctor/profile", icon: Settings },
+  { name: 'Dashboard', href: '/doctor/dashboard', icon: Home },
+  {
+    name: 'Accepted Appointments',
+    href: '/doctor/accepted-appointments',
+    icon: ClipboardCheck,
+  },
+  { name: 'My Availability', href: '/doctor/availability', icon: Calendar },
+  { name: 'My Profile', href: '/doctor/profile', icon: Settings },
 ];
 
 export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
-  const navItems = userType === "patient" ? patientNav : doctorNav;
+  const navItems = userType === 'patient' ? patientNav : doctorNav;
   const user =
-    userType === "patient"
+    userType === 'patient'
       ? {
-          name: "Rohan Kumar",
-          email: "rohan.kumar@example.com",
-          image: "https://picsum.photos/seed/indian-patient/100/100",
+          name: 'Rohan Kumar',
+          email: 'rohan.kumar@example.com',
+          image: 'https://picsum.photos/seed/indian-patient/100/100',
         }
       : {
-          name: "Dr. Sneha Reddy",
-          email: "s.reddy@clinic.com",
-          image: "https://picsum.photos/seed/indian-doctor-female/100/100",
+          name: 'Dr. Sneha Reddy',
+          email: 's.reddy@clinic.com',
+          image: 'https://picsum.photos/seed/indian-doctor-female/100/100',
         };
 
   return (
@@ -60,7 +68,9 @@ export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
       <Sidebar>
         <SidebarHeader>
           <Link href="/" className="flex items-baseline gap-2 px-2">
-            <span className="font-bold text-2xl tracking-wider text-primary">eDoc.</span>
+            <span className="font-bold text-2xl tracking-wider text-primary">
+              eDoc.
+            </span>
           </Link>
         </SidebarHeader>
         <SidebarContent>
