@@ -6,6 +6,7 @@ import { notFound, useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -17,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Textarea } from "@/components/ui/textarea";
 
 function BookingForm({ params }: { params: { doctorId: string } }) {
     const router = useRouter();
@@ -50,8 +52,8 @@ function BookingForm({ params }: { params: { doctorId: string } }) {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-                <div className="md:col-span-2">
+            <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-8">
                     <Card>
                         <CardHeader>
                             <CardTitle>Select a Date & Time</CardTitle>
@@ -93,9 +95,28 @@ function BookingForm({ params }: { params: { doctorId: string } }) {
                             )}
                         </CardContent>
                     </Card>
+
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Patient Details</CardTitle>
+                            <CardDescription>
+                                Please provide a brief reason for your visit.
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="reason">Reason for Visit / Symptoms</Label>
+                                <Textarea
+                                    id="reason"
+                                    placeholder="e.g., 'Follow-up for blood pressure check' or 'I have a persistent cough and a slight fever...'"
+                                    rows={4}
+                                />
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 md:sticky md:top-24">
                     <Card>
                         <CardHeader className="p-4">
                             <div className="flex items-center gap-3">
@@ -128,8 +149,8 @@ function BookingPageSkeleton() {
                 <Skeleton className="h-9 w-1/2 mb-2" />
                 <Skeleton className="h-5 w-3/4" />
             </div>
-             <div className="grid md:grid-cols-3 gap-8">
-                <div className="md:col-span-2">
+             <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-2 space-y-8">
                     <Card>
                         <CardHeader>
                             <Skeleton className="h-7 w-1/3" />
@@ -138,6 +159,15 @@ function BookingPageSkeleton() {
                            <Skeleton className="h-16 w-full" />
                            <Skeleton className="h-16 w-full" />
                            <Skeleton className="h-16 w-full" />
+                        </CardContent>
+                    </Card>
+                     <Card>
+                        <CardHeader>
+                            <Skeleton className="h-7 w-1/3" />
+                            <Skeleton className="h-4 w-2/3" />
+                        </CardHeader>
+                        <CardContent>
+                           <Skeleton className="h-24 w-full" />
                         </CardContent>
                     </Card>
                 </div>
