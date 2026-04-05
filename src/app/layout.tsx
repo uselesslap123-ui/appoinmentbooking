@@ -3,8 +3,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "SyncHealth AI",
-  description: "AI-powered symptom analysis and doctor discovery.",
+  title: "eDoc. | The Echanneling Project",
+  description: "Avoid hassles and delays. Find your doctor online and book your appointment with eDoc.",
 };
 
 export default function RootLayout({
