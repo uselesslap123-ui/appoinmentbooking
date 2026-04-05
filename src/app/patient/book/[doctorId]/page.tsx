@@ -2,7 +2,7 @@
 
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { doctors } from "@/lib/data";
-import { notFound, useRouter } from "next/navigation";
+import { notFound, useRouter, useParams } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -20,10 +20,12 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 
-function BookingForm({ params }: { params: { doctorId: string } }) {
+function BookingForm() {
     const router = useRouter();
+    const params = useParams();
     const { toast } = useToast();
-    const doctor = doctors.find((d) => d.id === params.doctorId);
+    const doctorId = params.doctorId as string;
+    const doctor = doctors.find((d) => d.id === doctorId);
 
     if (!doctor) {
         notFound();
@@ -190,15 +192,11 @@ function BookingPageSkeleton() {
     )
 }
 
-export default function BookAppointmentPage({
-  params,
-}: {
-  params: { doctorId: string };
-}) {
+export default function BookAppointmentPage() {
   return (
     <DashboardLayout userType="patient">
         <Suspense fallback={<BookingPageSkeleton />}>
-            <BookingForm params={params} />
+            <BookingForm />
         </Suspense>
     </DashboardLayout>
   );
