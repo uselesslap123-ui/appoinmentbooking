@@ -59,9 +59,8 @@ export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
     <SidebarProvider>
       <Sidebar>
         <SidebarHeader>
-          <Link href="/" className="flex items-center gap-2">
-            <Stethoscope className="w-6 h-6 text-primary" />
-            <span className="font-bold text-lg text-primary">SyncHealth AI</span>
+          <Link href="/" className="flex items-baseline gap-2 px-2">
+            <span className="font-bold text-2xl tracking-wider text-primary">eDoc.</span>
           </Link>
         </SidebarHeader>
         <SidebarContent>
@@ -86,7 +85,6 @@ export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
             </Avatar>
             <div className="flex flex-col text-sm overflow-hidden">
               <span className="font-semibold truncate">{user.name}</span>
-              <span className="text-muted-foreground truncate">{user.email}</span>
             </div>
           </div>
         </SidebarFooter>
