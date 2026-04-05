@@ -37,10 +37,10 @@ export default function Home() {
               <Link href="/patient/dashboard">Make Appointment</Link>
             </Button>
             <div className="flex justify-center gap-4 items-center tracking-wider">
-                <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-300 text-gray-300 hover:bg-gray-200 hover:text-black">
+                <Button asChild variant="outline" className="rounded-full bg-white/5 border-white/30 text-gray-200 hover:bg-white/10 hover:border-white hover:text-white backdrop-blur-sm">
                     <Link href="/patient/dashboard">Patient Login</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-300 text-gray-300 hover:bg-gray-200 hover:text-black">
+                <Button asChild variant="outline" className="rounded-full bg-white/5 border-white/30 text-gray-200 hover:bg-white/10 hover:border-white hover:text-white backdrop-blur-sm">
                     <Link href="/doctor/dashboard">Doctor Login</Link>
                 </Button>
             </div>
