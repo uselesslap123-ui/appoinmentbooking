@@ -1,71 +1,52 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Stethoscope, User } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Stethoscope } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background p-8">
-      <div className="text-center mb-12">
-        <h1 className="font-headline text-5xl font-bold text-primary">
-          SyncHealth AI
-        </h1>
-        <p className="text-lg text-muted-foreground mt-2">
-          Your intelligent partner in health.
-        </p>
-      </div>
+    <div className="relative min-h-screen w-full">
+      <Image
+        src="https://picsum.photos/seed/doctors-hero/1920/1080"
+        alt="A team of doctors"
+        fill
+        className="object-cover object-center"
+        data-ai-hint="doctors medical"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/60" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-        <Card className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl">
-          <CardHeader className="items-center text-center">
-            <div className="p-4 bg-primary/10 rounded-full mb-4">
-              <User className="h-10 w-10 text-primary" />
-            </div>
-            <CardTitle className="font-headline text-2xl">For Patients</CardTitle>
-            <CardDescription className="px-4">
-              Check your symptoms, find the right specialist, and book
-              appointments with ease.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex justify-center">
-            <Button asChild size="lg" className="font-bold">
-              <Link href="/patient/dashboard">Enter Patient Portal</Link>
+      <div className="relative z-10 flex min-h-screen flex-col text-white">
+        <header className="flex items-center justify-between p-4 md:p-6">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold text-white">
+             <Stethoscope className="h-6 w-6" />
+             <span>eDoc.</span>
+             <span className="font-light text-sm ml-2 pl-2 border-l border-gray-400 hidden sm:inline">
+                THE ECHANNELING PROJECT
+             </span>
+          </Link>
+          <nav className="flex items-center space-x-2 sm:space-x-4">
+            <Button variant="link" asChild className="text-white hover:underline uppercase">
+              <Link href="/patient/dashboard">Login</Link>
             </Button>
-          </CardContent>
-        </Card>
+            <Button variant="link" asChild className="text-white hover:underline uppercase">
+               <Link href="/doctor/dashboard">Register</Link>
+            </Button>
+          </nav>
+        </header>
 
-        <Card className="transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl">
-          <CardHeader className="items-center text-center">
-            <div className="p-4 bg-accent/10 rounded-full mb-4">
-              <Stethoscope className="h-10 w-10 text-accent" />
-            </div>
-            <CardTitle className="font-headline text-2xl">For Doctors</CardTitle>
-            <CardDescription className="px-4">
-              Manage your profile, set your schedule, and connect with patients
-              seamlessly.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex justify-center">
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="font-bold border-accent text-accent hover:bg-accent/10 hover:text-accent"
-            >
-              <Link href="/doctor/dashboard">Enter Doctor Portal</Link>
-            </Button>
-          </CardContent>
-        </Card>
+        <main className="flex flex-1 flex-col items-center justify-center text-center p-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+            Avoid Hassles & Delays.
+          </h1>
+          <p className="mt-4 max-w-xl sm:max-w-2xl text-lg text-gray-200">
+            Not feeling well? Don't worry. Find your doctor and book an appointment online with eDoc. We offer a free doctor channeling service to help you get care without delay.
+          </p>
+          <Button asChild size="lg" className="mt-8 font-bold">
+            <Link href="/patient/doctors">Make Appointment</Link>
+          </Button>
+        </main>
       </div>
-      <footer className="mt-16 text-center text-sm text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} SyncHealth AI. All rights reserved.</p>
-      </footer>
-    </main>
+    </div>
   );
 }
