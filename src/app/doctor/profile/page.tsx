@@ -41,7 +41,7 @@ export default function DoctorProfilePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" defaultValue="Dr. Evelyn Reed" />
+                <Input id="name" defaultValue="Dr. Sneha Reddy" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="specialization">Specialization</Label>
@@ -64,8 +64,8 @@ export default function DoctorProfilePage() {
                 <Input id="experience" type="number" defaultValue="8" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="fees">Consultation Fee ($)</Label>
-                <Input id="fees" type="number" defaultValue="180" />
+                <Label htmlFor="fees">Consultation Fee (₹)</Label>
+                <Input id="fees" type="number" defaultValue="1500" />
               </div>
             </div>
             <div className="space-y-2">
@@ -81,7 +81,7 @@ export default function DoctorProfilePage() {
                 id="bio"
                 placeholder="Tell patients a little about yourself..."
                 rows={4}
-                defaultValue="Dr. Reed is a board-certified dermatologist with a passion for holistic skincare and patient education."
+                defaultValue="Dr. Reddy is a board-certified dermatologist with a passion for holistic skincare and patient education."
               />
             </div>
             <div className="flex justify-end pt-4">

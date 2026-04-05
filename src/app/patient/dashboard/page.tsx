@@ -6,10 +6,10 @@ export default function PatientDashboardPage() {
     <DashboardLayout userType="patient">
       <div className="space-y-2 mb-8 text-center">
         <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl">
-          Symptom Check ✨
+          AI Symptom Checker
         </h1>
         <p className="max-w-[700px] mx-auto text-lg text-muted-foreground md:text-xl">
-          Feeling off? Drop your symptoms below and our AI will give you the lowdown on what might be up.
+          Not feeling well? Describe your symptoms below, and our AI will provide a preliminary analysis and suggest which type of specialist to consult.
         </p>
       </div>
       <SymptomChecker />

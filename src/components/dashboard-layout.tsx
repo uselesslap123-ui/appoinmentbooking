@@ -45,14 +45,14 @@ export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
   const user =
     userType === "patient"
       ? {
-          name: "Alex Ray",
-          email: "alex.ray@example.com",
-          image: "https://picsum.photos/seed/101/100/100",
+          name: "Rohan Kumar",
+          email: "rohan.kumar@example.com",
+          image: "https://picsum.photos/seed/indian-patient/100/100",
         }
       : {
-          name: "Dr. Evelyn Reed",
-          email: "e.reed@clinic.com",
-          image: "https://picsum.photos/seed/102/100/100",
+          name: "Dr. Sneha Reddy",
+          email: "s.reddy@clinic.com",
+          image: "https://picsum.photos/seed/indian-doctor-female/100/100",
         };
 
   return (

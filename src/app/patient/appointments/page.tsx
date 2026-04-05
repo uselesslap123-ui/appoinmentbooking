@@ -20,7 +20,7 @@ export default function PatientAppointmentsPage() {
           <CardContent className="space-y-4">
             <div className="p-4 border rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <p className="font-bold text-lg">Dr. Michael Chen</p>
+                <p className="font-bold text-lg">Dr. Rohan Das</p>
                 <div className="flex items-center text-muted-foreground text-sm gap-2">
                   <Stethoscope className="w-4 h-4" /> General Practitioner
                 </div>

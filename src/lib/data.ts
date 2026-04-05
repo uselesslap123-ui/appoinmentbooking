@@ -15,7 +15,7 @@ export type Doctor = {
 export const doctors: Doctor[] = [
   {
     id: "doc1",
-    name: "Dr. John Carter",
+    name: "Dr. Arjun Sharma",
     specialization: "Cardiologist",
     experience: 15,
     clinic: "City Heart Clinic",
@@ -28,7 +28,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc2",
-    name: "Dr. Sarah Adams",
+    name: "Dr. Sneha Reddy",
     specialization: "Dermatologist",
     experience: 8,
     clinic: "Skin & Wellness Center",
@@ -41,7 +41,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc3",
-    name: "Dr. Michael Chen",
+    name: "Dr. Rohan Das",
     specialization: "General Practitioner",
     experience: 12,
     clinic: "Community Health Services",
@@ -54,7 +54,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc4",
-    name: "Dr. Emily Rodriguez",
+    name: "Dr. Ananya Gupta",
     specialization: "Pediatrician",
     experience: 10,
     clinic: "KidsCare Pediatrics",
@@ -67,7 +67,7 @@ export const doctors: Doctor[] = [
   },
     {
     id: "doc5",
-    name: "Dr. Ben Green",
+    name: "Dr. Vikram Singh",
     specialization: "General Practitioner",
     experience: 20,
     clinic: "Green Family Practice",
@@ -80,7 +80,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc6",
-    name: "Dr. Olivia White",
+    name: "Dr. Aisha Khan",
     specialization: "Dermatologist",
     experience: 5,
     clinic: "The Dermatology Group",

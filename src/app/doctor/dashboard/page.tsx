@@ -21,21 +21,21 @@ import { Check, X } from "lucide-react";
 const appointmentRequests = [
   {
     id: 1,
-    patient: "Charlie Brown",
+    patient: "Aditya Verma",
     date: "2024-10-28",
     time: "02:00 PM",
     status: "Pending",
   },
   {
     id: 2,
-    patient: "Lucy van Pelt",
+    patient: "Ishika Singh",
     date: "2024-10-29",
     time: "11:00 AM",
     status: "Pending",
   },
   {
     id: 3,
-    patient: "Linus van Pelt",
+    patient: "Sameer Joshi",
     date: "2024-10-29",
     time: "03:00 PM",
     status: "Confirmed",
@@ -49,7 +49,7 @@ export default function DoctorDashboardPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-muted-foreground">
-            Welcome back, Dr. Reed. Here are your appointment requests.
+            Welcome back, Dr. Reddy. Here are your appointment requests.
           </p>
         </div>
         <Card>

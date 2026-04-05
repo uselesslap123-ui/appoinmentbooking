@@ -8,11 +8,11 @@ export default function Home() {
       <div className="relative h-screen w-full flex flex-col text-white">
         {/* Background Image & Overlay */}
         <Image
-          src="https://picsum.photos/seed/hero-doctors/1920/1080"
+          src="https://picsum.photos/seed/indian-doctor/1920/1080"
           alt="A group of medical professionals"
           fill
           className="object-cover z-0"
-          data-ai-hint="doctors medical team"
+          data-ai-hint="indian doctor medical professional"
         />
         <div className="absolute inset-0 bg-gray-900/60 z-10" />
 
@@ -31,7 +31,7 @@ export default function Home() {
               Avoid Hassles & Delays.
             </h1>
             <p className="max-w-[700px] text-gray-200 text-lg mx-auto leading-relaxed">
-              How is health today, Sounds like not good! Don't worry. Find your doctor online Book as you wish with eDoc. We offer you a free doctor channeling service, Make your appointment now.
+              Not feeling well? Don't worry. Find your doctor online and book as you wish with eDoc. We offer a free doctor channeling service. Make your appointment now.
             </p>
             <Button asChild size="lg" className="text-lg px-10 py-7 rounded-full font-semibold">
               <Link href="/patient/dashboard">Make Appointment</Link>

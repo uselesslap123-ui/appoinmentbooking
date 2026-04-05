@@ -72,11 +72,11 @@ function SubmitButton() {
     <Button type="submit" disabled={pending} className="w-full font-bold text-lg" size="lg">
       {pending ? (
         <>
-          <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Cooking...
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Analysing...
         </>
       ) : (
         <>
-          <WandSparkles className="mr-2 h-5 w-5" /> Get the Lowdown
+          <WandSparkles className="mr-2 h-5 w-5" /> Get AI Analysis
         </>
       )}
     </Button>
@@ -125,10 +125,10 @@ export function SymptomChecker() {
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl">
             <WandSparkles className="w-7 h-7 text-primary" />
-            Spill the Symptoms
+            What's Troubling You?
           </CardTitle>
           <CardDescription>
-            Go on, don&apos;t be shy. The more deets you give the AI, the better it can read the vibes.
+            Don't worry, just tell us what you're feeling. The more details you provide, the better our AI can help.
           </CardDescription>
         </CardHeader>
         <form action={formAction}>
@@ -140,7 +140,7 @@ export function SymptomChecker() {
               <Textarea
                 id="symptoms"
                 name="symptoms"
-                placeholder="e.g., 'lowkey been having this headache for 3 days, my back is acting up, and I'm tired af...'"
+                placeholder="e.g., '3 din se sar dard ho raha hai, kamar mein bhi dard hai, aur bahut thakaan lag rahi hai...'"
                 rows={8}
                 required
                 minLength={10}
@@ -150,7 +150,7 @@ export function SymptomChecker() {
             {state.error && (
               <Alert variant="destructive" className="mt-4">
                 <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Whoops!</AlertTitle>
+                <AlertTitle>Error!</AlertTitle>
                 <AlertDescription>{state.error}</AlertDescription>
               </Alert>
             )}
@@ -169,23 +169,23 @@ export function SymptomChecker() {
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <BrainCircuit className="text-accent" />
-                AI Vibe Check
+                AI Health Report
               </CardTitle>
               <CardDescription>
-                Quick heads up: I&apos;m just a bot, not a doc. Def get a real one to check you out.
+                Disclaimer: I am an AI assistant, not a real doctor. Please consult a qualified doctor for a proper diagnosis.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="p-4 bg-background/50 rounded-xl border-2 border-primary/50 shadow-lg">
                 <h3 className="font-semibold flex items-center gap-2 text-base mb-2 text-primary">
-                  <UserCheck /> Main Character
+                  <UserCheck /> Recommended Specialist
                 </h3>
                 <p className="text-3xl font-bold">
                   {state.data.recommendedSpecialization}
                 </p>
                 <div className="mt-3">
                   <p className="text-sm font-medium text-muted-foreground mb-1">
-                    Confidence Level
+                    Confidence Score
                   </p>
                   <div className="flex items-center gap-3">
                     <Progress
@@ -200,7 +200,7 @@ export function SymptomChecker() {
               </div>
               <div className="p-4 bg-background/50 rounded-xl border">
                 <h3 className="font-semibold flex items-center gap-2 text-lg mb-3">
-                  <ListChecks /> The TL;DR
+                  <ListChecks /> Possible Issues
                 </h3>
                 <ul className="space-y-3">
                   {state.data.possibleIssues.map((issue, index) => (
@@ -214,7 +214,7 @@ export function SymptomChecker() {
             </CardContent>
             <CardFooter className="flex-col items-stretch gap-4">
               <p className="text-sm text-center text-muted-foreground">
-                Aight, what&apos;s next?
+                What's next?
               </p>
               <Button asChild size="lg" className="font-bold text-lg">
                 <Link
@@ -235,9 +235,9 @@ export function SymptomChecker() {
             <div className="p-4 bg-primary/10 rounded-full mb-4">
                 <Bot className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold">The AI is waiting...</h2>
+            <h2 className="text-2xl font-bold">Your AI assistant is ready.</h2>
             <p className="text-muted-foreground mt-2 max-w-sm">
-                Drop your symptoms on the left and see what it thinks. No judgment.
+                Describe your symptoms in the panel on the left to get a preliminary analysis.
             </p>
           </div>
         )}

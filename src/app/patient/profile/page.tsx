@@ -31,14 +31,14 @@ export default function PatientProfilePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" defaultValue="Alex Ray" />
+                <Input id="name" defaultValue="Rohan Kumar" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email Address</Label>
                 <Input
                   id="email"
                   type="email"
-                  defaultValue="alex.ray@example.com"
+                  defaultValue="rohan.kumar@example.com"
                   readOnly
                 />
               </div>
