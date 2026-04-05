@@ -17,15 +17,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gray-900/60 z-10" />
 
         {/* Header */}
-        <header className="relative z-20 px-4 lg:px-8 py-5 flex items-center justify-between">
+        <header className="relative z-20 px-4 lg:px-8 py-5 flex items-center">
            <Link href="/" className="flex items-baseline gap-3">
             <span className="font-bold text-3xl tracking-wider">eDoc.</span>
             <span className="text-xs font-light tracking-widest uppercase hidden sm:inline">The Echanneling Project</span>
           </Link>
-          <nav className="flex gap-6 sm:gap-8 items-center text-sm font-medium tracking-wider">
-             <Link href="/patient/dashboard" className="hover:underline underline-offset-4 transition-all">LOGIN</Link>
-             <Link href="/doctor/dashboard" className="hover:underline underline-offset-4 transition-all">REGISTER</Link>
-          </nav>
         </header>
 
         {/* Hero Content */}
@@ -40,6 +36,10 @@ export default function Home() {
             <Button asChild size="lg" className="text-lg px-10 py-7 rounded-full font-semibold">
               <Link href="/patient/dashboard">Make Appointment</Link>
             </Button>
+            <div className="flex justify-center gap-6 sm:gap-8 items-center text-sm font-medium tracking-wider">
+                <Link href="/patient/dashboard" className="hover:underline underline-offset-4 transition-all">Patient Login</Link>
+                <Link href="/doctor/dashboard" className="hover:underline underline-offset-4 transition-all">Doctor Login</Link>
+            </div>
           </div>
         </main>
       </div>
