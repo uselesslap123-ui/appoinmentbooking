@@ -18,15 +18,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
-  Lightbulb,
+  WandSparkles,
   Loader2,
-  HeartPulse,
-  List,
-  ShieldCheck,
+  BrainCircuit,
+  ListChecks,
+  UserCheck,
   ArrowRight,
   AlertCircle,
-  FileText,
   CheckCircle2,
+  Bot,
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
@@ -69,14 +69,14 @@ async function analyzeSymptomsAction(
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full">
+    <Button type="submit" disabled={pending} className="w-full font-bold text-lg" size="lg">
       {pending ? (
         <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Analyzing...
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Cooking...
         </>
       ) : (
         <>
-          <HeartPulse className="mr-2 h-4 w-4" /> Get AI Analysis
+          <WandSparkles className="mr-2 h-5 w-5" /> Get the Lowdown
         </>
       )}
     </Button>
@@ -121,15 +121,14 @@ export function SymptomChecker() {
 
   return (
     <div className="grid lg:grid-cols-2 gap-8 items-start">
-      <Card className="lg:sticky lg:top-24">
+      <Card className="lg:sticky lg:top-24 bg-card/80 backdrop-blur-sm border-primary/20">
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
-            <FileText className="w-6 h-6 text-primary" />
-            Symptom Input
+          <CardTitle className="flex items-center gap-3 text-2xl">
+            <WandSparkles className="w-7 h-7 text-primary" />
+            Spill the Symptoms
           </CardTitle>
           <CardDescription>
-            Describe your symptoms in detail. The more information you provide,
-            the more accurate the AI analysis will be.
+            Go on, don&apos;t be shy. The more deets you give the AI, the better it can read the vibes.
           </CardDescription>
         </CardHeader>
         <form action={formAction}>
@@ -141,17 +140,17 @@ export function SymptomChecker() {
               <Textarea
                 id="symptoms"
                 name="symptoms"
-                placeholder="e.g., 'For the last three days, I've had a sharp pain in my lower back, a mild but persistent headache, and I've been feeling unusually tired...'"
+                placeholder="e.g., 'lowkey been having this headache for 3 days, my back is acting up, and I'm tired af...'"
                 rows={8}
                 required
                 minLength={10}
-                className="text-base"
+                className="text-base bg-background/50 border-2 border-dashed focus-visible:border-solid focus-visible:border-primary"
               />
             </div>
             {state.error && (
               <Alert variant="destructive" className="mt-4">
                 <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Input Error</AlertTitle>
+                <AlertTitle>Whoops!</AlertTitle>
                 <AlertDescription>{state.error}</AlertDescription>
               </Alert>
             )}
@@ -166,48 +165,47 @@ export function SymptomChecker() {
         {pending && <ResultsSkeleton />}
 
         {!pending && state.data && (
-          <Card className="border-primary/40 bg-primary/5">
+          <Card className="border-accent/40 bg-gradient-to-br from-accent/5 to-transparent">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <Lightbulb className="text-primary" />
-                AI Analysis & Recommendation
+                <BrainCircuit className="text-accent" />
+                AI Vibe Check
               </CardTitle>
               <CardDescription>
-                This is a preliminary analysis based on your symptoms and not a
-                medical diagnosis. Please consult with a qualified doctor.
+                Quick heads up: I&apos;m just a bot, not a doc. Def get a real one to check you out.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="p-4 bg-background rounded-xl border-2 border-accent/50 shadow-sm">
-                <h3 className="font-semibold flex items-center gap-2 text-lg mb-2">
-                  <ShieldCheck className="text-accent" /> Recommended Specialist
+              <div className="p-4 bg-background/50 rounded-xl border-2 border-primary/50 shadow-lg">
+                <h3 className="font-semibold flex items-center gap-2 text-base mb-2 text-primary">
+                  <UserCheck /> Main Character
                 </h3>
-                <p className="text-3xl font-bold text-accent">
+                <p className="text-3xl font-bold">
                   {state.data.recommendedSpecialization}
                 </p>
                 <div className="mt-3">
                   <p className="text-sm font-medium text-muted-foreground mb-1">
-                    Analysis Confidence
+                    Confidence Level
                   </p>
                   <div className="flex items-center gap-3">
                     <Progress
                       value={state.data.confidenceScore * 100}
-                      className="w-full h-2"
+                      className="w-full h-3 [&>div]:bg-gradient-to-r [&>div]:from-primary [&>div]:to-accent"
                     />
-                    <span className="font-bold text-base text-accent">
+                    <span className="font-bold text-lg">
                       {(state.data.confidenceScore * 100).toFixed(0)}%
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-background rounded-xl border">
+              <div className="p-4 bg-background/50 rounded-xl border">
                 <h3 className="font-semibold flex items-center gap-2 text-lg mb-3">
-                  <List /> Possible Medical Issues
+                  <ListChecks /> The TL;DR
                 </h3>
                 <ul className="space-y-3">
                   {state.data.possibleIssues.map((issue, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                       <span className="text-muted-foreground">{issue}</span>
                     </li>
                   ))}
@@ -216,16 +214,16 @@ export function SymptomChecker() {
             </CardContent>
             <CardFooter className="flex-col items-stretch gap-4">
               <p className="text-sm text-center text-muted-foreground">
-                Ready for the next step?
+                Aight, what&apos;s next?
               </p>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="font-bold text-lg">
                 <Link
                   href={`/patient/doctors?specialization=${encodeURIComponent(
                     state.data.recommendedSpecialization
                   )}`}
                 >
                   Find a {state.data.recommendedSpecialization}{" "}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </CardFooter>
@@ -233,18 +231,15 @@ export function SymptomChecker() {
         )}
 
         {!pending && !state.data && (
-          <Card className="flex flex-col justify-center items-center text-center p-8 lg:p-16 border-dashed">
-            <div className="p-4 bg-secondary rounded-full mb-4">
-              <HeartPulse className="w-10 h-10 text-primary" />
+           <div className="flex flex-col justify-center items-center text-center p-8 lg:p-16 border-2 border-dashed rounded-2xl">
+            <div className="p-4 bg-primary/10 rounded-full mb-4">
+                <Bot className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-xl font-semibold">
-              Your Health Analysis Awaits
-            </h2>
+            <h2 className="text-2xl font-bold">The AI is waiting...</h2>
             <p className="text-muted-foreground mt-2 max-w-sm">
-              Fill out your symptoms on the left, and our AI will provide a
-              preliminary analysis and recommend a specialist to consult.
+                Drop your symptoms on the left and see what it thinks. No judgment.
             </p>
-          </Card>
+          </div>
         )}
       </div>
     </div>
