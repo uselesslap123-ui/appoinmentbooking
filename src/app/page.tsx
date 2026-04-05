@@ -36,9 +36,13 @@ export default function Home() {
             <Button asChild size="lg" className="text-lg px-10 py-7 rounded-full font-semibold">
               <Link href="/patient/dashboard">Make Appointment</Link>
             </Button>
-            <div className="flex justify-center gap-6 sm:gap-8 items-center text-sm font-medium tracking-wider">
-                <Link href="/patient/dashboard" className="hover:underline underline-offset-4 transition-all">Patient Login</Link>
-                <Link href="/doctor/dashboard" className="hover:underline underline-offset-4 transition-all">Doctor Login</Link>
+            <div className="flex justify-center gap-4 items-center tracking-wider">
+                <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-300 text-gray-300 hover:bg-gray-200 hover:text-black">
+                    <Link href="/patient/dashboard">Patient Login</Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full bg-transparent border-gray-300 text-gray-300 hover:bg-gray-200 hover:text-black">
+                    <Link href="/doctor/dashboard">Doctor Login</Link>
+                </Button>
             </div>
           </div>
         </main>
