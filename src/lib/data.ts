@@ -15,7 +15,7 @@ export type Doctor = {
 export const doctors: Doctor[] = [
   {
     id: "doc1",
-    name: "Dr. Arjun Sharma",
+    name: "Dr. Rohit Jadhav",
     specialization: "Cardiologist",
     experience: 15,
     clinic: "City Heart Clinic",
@@ -28,7 +28,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc2",
-    name: "Dr. Sneha Reddy",
+    name: "Dr. Rahul Shewale",
     specialization: "Dermatologist",
     experience: 8,
     clinic: "Skin & Wellness Center",
@@ -36,12 +36,12 @@ export const doctors: Doctor[] = [
     fees: 1500,
     rating: 4.9,
     distance: 5.1,
-    avatarUrl: "https://picsum.photos/seed/indian-doctor-female/200/200",
+    avatarUrl: "https://picsum.photos/seed/doc2/200/200",
     availability: { "Tuesday": ["9:00 AM", "10:00 AM"], "Thursday": ["1:00 PM"] },
   },
   {
     id: "doc3",
-    name: "Dr. Rohan Das",
+    name: "Dr. Khushali Singala",
     specialization: "General Practitioner",
     experience: 12,
     clinic: "Community Health Services",
@@ -54,7 +54,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc4",
-    name: "Dr. Ananya Gupta",
+    name: "Dr. Harshad Shewale",
     specialization: "Pediatrician",
     experience: 10,
     clinic: "KidsCare Pediatrics",
@@ -67,7 +67,7 @@ export const doctors: Doctor[] = [
   },
     {
     id: "doc5",
-    name: "Dr. Vikram Singh",
+    name: "Dr. Akash Shetty",
     specialization: "General Practitioner",
     experience: 20,
     clinic: "Green Family Practice",
@@ -80,7 +80,7 @@ export const doctors: Doctor[] = [
   },
   {
     id: "doc6",
-    name: "Dr. Aisha Khan",
+    name: "Dr. Sneha Shinde",
     specialization: "Dermatologist",
     experience: 5,
     clinic: "The Dermatology Group",

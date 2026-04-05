@@ -54,7 +54,7 @@ function DoctorCard({ doctor }: { doctor: Doctor }) {
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full">
-          <Link href={`/patient/book/${doctor.id}`}>Book Appointment</Link>
+          <Link href={`/patient/doctors/${doctor.id}`}>View Profile</Link>
         </Button>
       </CardFooter>
     </Card>
